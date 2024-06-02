@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import MainNav from "./MainNav";
 import MobileNav from "./MobileNav";
 
-
 const Header = () => {
   return (
     <div className="border-b-2 border-b-orange-500 py-6">

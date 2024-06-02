@@ -2,7 +2,6 @@ import landingImage from "../assets/landing.png";
 import appDownloadImage from "../assets/appDownload.png";
 
 const HomePage = () => {
-
   return (
     <div className="flex flex-col gap-12">
       <div className="md:px-32 bg-white rounded-lg shadow-md py-8 flex flex-col gap-5 text-center -mt-16">
