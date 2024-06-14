@@ -25,7 +25,7 @@ const OrderStatusDetail = ({ order }: Props) => {
           ))}
         </ul>
       </div>
-      <Separator />
+      <Separator className="dark:bg-white"/>
       <div className="flex flex-col">
         <span className="font-bold">Total</span>
         <span>${(order.totalAmount / 100).toFixed(2)}</span>

@@ -11,6 +11,7 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import MobileNavLinks from "./MobileNavLinks";
+import { ModeToggle } from "./mode-toggle";
 
 const MobileNav = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
@@ -31,7 +32,7 @@ const MobileNav = () => {
       <SheetContent className="space-y-3">
         <SheetTitle>
           {isAuthenticated ? (
-            <span className="flex items-center font-bold gap-2">
+            <span className="flex justify-around items-center font-bold gap-2">
               {/* <CircleUserRound className="text-orange-500" />
               {user?.email} */}
               <Avatar>
@@ -43,6 +44,7 @@ const MobileNav = () => {
                   {user ? getInitials(user.name || user.email || "") : "?"}
                 </AvatarFallback>
               </Avatar>
+              <ModeToggle/>
             </span>
           ) : (
             <span> Welcome to OrderEats.com!</span>

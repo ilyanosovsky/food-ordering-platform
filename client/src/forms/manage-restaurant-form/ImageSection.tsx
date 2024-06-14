@@ -40,7 +40,7 @@ const ImageSection = () => {
             <FormItem>
               <FormControl>
                 <Input
-                  className="bg-white"
+                  className="bg-white dark:bg-gray-900 dark:border-gray-700"
                   type="file"
                   accept=".jpg, .jpeg, .png, .webp"
                   onChange={(event) =>
