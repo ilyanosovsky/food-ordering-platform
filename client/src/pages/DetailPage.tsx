@@ -1,13 +1,13 @@
 import { useGetRestaurant } from "@/api/RestaurantApi";
-import MenuItem from "@/components/MenuItem";
-import OrderSummary from "@/components/OrderSummary";
-import RestaurantInfo from "@/components/RestaurantInfo";
+import MenuItem from "@/components/Search/MenuItem";
+import OrderSummary from "@/components/Order/OrderSummary";
+import RestaurantInfo from "@/components/Search/RestaurantInfo";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Card, CardFooter } from "@/components/ui/card";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { MenuItem as MenuItemType } from "../types";
-import CheckoutButton from "@/components/CheckoutButton";
+import CheckoutButton from "@/components/Order/CheckoutButton";
 import { UserFormData } from "@/forms/user-profile-form/UserProfileForm";
 import { useCreateCheckoutSession } from "@/api/OrderApi";
 

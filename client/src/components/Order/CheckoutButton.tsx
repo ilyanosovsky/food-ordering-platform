@@ -1,8 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useLocation } from "react-router-dom";
-import { Button } from "./ui/button";
-import LoadingButton from "./LoadingButton";
-import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { Button } from "../ui/button";
+import LoadingButton from "../Loading/LoadingButton";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import UserProfileForm, {
   UserFormData,
 } from "@/forms/user-profile-form/UserProfileForm";
@@ -41,7 +41,7 @@ const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
     );
   }
 
-  if (isAuthLoading || !currentUser || isLoading ) {
+  if (isAuthLoading || !currentUser || isLoading) {
     return <LoadingButton />;
   }
 

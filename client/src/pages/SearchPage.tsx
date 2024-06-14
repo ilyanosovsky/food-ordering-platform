@@ -1,10 +1,10 @@
 import { useSearchRestaurants } from "@/api/RestaurantApi";
-import CuisineFilter from "@/components/CuisineFilter";
-import PaginationSelector from "@/components/PaginationSelector";
-import SearchBar, { SearchForm } from "@/components/SearchBar";
-import SearchResultCard from "@/components/SearchResultCard";
-import SearchResultInfo from "@/components/SearchResultInfo";
-import SortOptionDropdown from "@/components/SortOptionDropdown";
+import CuisineFilter from "@/components/Search/CuisineFilter";
+import PaginationSelector from "@/components/Search/PaginationSelector";
+import SearchBar, { SearchForm } from "@/components/Search/SearchBar";
+import SearchResultCard from "@/components/Search/SearchResultCard";
+import SearchResultInfo from "@/components/Search/SearchResultInfo";
+import SortOptionDropdown from "@/components/Search/SortOptionDropdown";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 

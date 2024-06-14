@@ -1,5 +1,5 @@
 import { useGetMyUser, useUpdateMyUser } from "@/api/MyUserApi";
-import LoadingSpinner from "@/components/LoadingSpinner";
+import LoadingSpinner from "@/components/Loading/LoadingSpinner";
 import UserProfileForm from "@/forms/user-profile-form/UserProfileForm";
 
 const UserProfilePage = () => {
