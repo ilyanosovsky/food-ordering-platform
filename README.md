@@ -49,7 +49,9 @@ We leverage **Cloudinary** for efficient image storage and management, ensuring 
 
 ### Landing Page
 
-![Landing Page Light Mode](assets/fullLight.png) ![Landing Page Dark Mode](assets/fullDark.png)
+![Landing Page Light Mode](assets/fullLight.png) 
+
+
 
 ### Features
 
@@ -62,8 +64,17 @@ We leverage **Cloudinary** for efficient image storage and management, ensuring 
 ![Live Order Status](assets/status.png)
 *Live Order Status*
 
-![Navigation Light Mode](assets/navLight.png) ![Navigation Dark Mode](assets/navDark.png)
-*Dark / Light Mode / Localization*
+<table>
+  <tr>
+    <td align="center"><img src="assets/navLight.png" alt="NavigationLightMode" /></td>
+    <td align="center"><img src="assets/navDark.png" alt="NavigationDarkMode" /></td>
+  </tr>
+  <tr>
+    <td align="center">Light / Dark Mode</td>
+    <td align="center">Localization</td>
+  </tr>
+</table>
+
 
 ---
 
