@@ -53,7 +53,7 @@ const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
           {t("order.goToCheckout")}
         </Button>
       </DialogTrigger>
-      <DialogContent className="max-w-[425px] md:min-w-[700px] bg-gray-50">
+      <DialogContent className="max-w-[425px] md:min-w-[700px] bg-gray-50 dark:bg-gray-900">
         <UserProfileForm
           currentUser={currentUser}
           onSave={onCheckout}

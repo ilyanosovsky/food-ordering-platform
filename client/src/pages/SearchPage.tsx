@@ -8,6 +8,7 @@ import SortOptionDropdown from "@/components/Search/SortOptionDropdown";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import LoadingSpinner from "@/components/Loading/LoadingSpinner";
 
 export type SearchState = {
   searchQuery: string;
@@ -69,11 +70,12 @@ const SearchPage = () => {
   };
 
   if (isLoading) {
-    <span>Loading ...</span>;
+    return <LoadingSpinner />;
   }
 
   if (!results?.data || !city) {
-    return <span>No results found</span>;
+    // return <span>No results found</span>;
+    return <LoadingSpinner />;
   }
 
   return (

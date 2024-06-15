@@ -10,6 +10,7 @@ import { MenuItem as MenuItemType } from "../types";
 import CheckoutButton from "@/components/Order/CheckoutButton";
 import { UserFormData } from "@/forms/user-profile-form/UserProfileForm";
 import { useCreateCheckoutSession } from "@/api/OrderApi";
+import LoadingSpinner from "@/components/Loading/LoadingSpinner";
 
 export type CartItem = {
   _id: string;
@@ -105,7 +106,7 @@ const DetailPage = () => {
   };
 
   if (isLoading || !restaurant) {
-    return "Loading...";
+    return <LoadingSpinner />;
   }
 
   return (
