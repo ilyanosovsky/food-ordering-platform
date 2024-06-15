@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useFormContext } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   index: number;
@@ -16,6 +17,7 @@ type Props = {
 
 const MenuItemInput = ({ index, removeMenuItem }: Props) => {
   const { control } = useFormContext();
+  const { t } = useTranslation();
 
   return (
     <div className="flex flex-row items-end gap-2">
@@ -25,7 +27,7 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
         render={({ field }) => (
           <FormItem>
             <FormLabel className="flex items-center gap-1">
-              Name <FormMessage />
+              {t("menu.name")} <FormMessage />
             </FormLabel>
             <FormControl>
               <Input
@@ -43,10 +45,14 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
         render={({ field }) => (
           <FormItem>
             <FormLabel className="flex items-center gap-1">
-              Price ($) <FormMessage />
+              {t("menu.price")} ($) <FormMessage />
             </FormLabel>
             <FormControl>
-              <Input {...field} placeholder="8.00" className="bg-white dark:bg-gray-900 dark:border-gray-700" />
+              <Input
+                {...field}
+                placeholder="8.00"
+                className="bg-white dark:bg-gray-900 dark:border-gray-700"
+              />
             </FormControl>
           </FormItem>
         )}
@@ -56,7 +62,7 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
         onClick={removeMenuItem}
         className="bg-red-500 max-h-fit"
       >
-        Remove
+        {t("menu.remove")}
       </Button>
     </div>
   );

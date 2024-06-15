@@ -15,6 +15,7 @@ import LoadingButton from "@/components/Loading/LoadingButton";
 import { Button } from "@/components/ui/button";
 import { User } from "@/types";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const formSchema = z.object({
   email: z.string().optional(),
@@ -46,6 +47,8 @@ const UserProfileForm = ({
     defaultValues: currentUser,
   });
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     form.reset(currentUser);
   }, [currentUser, form]);
@@ -58,18 +61,20 @@ const UserProfileForm = ({
       >
         <div>
           <h2 className="text-2xl font-bold">{title}</h2>
-          <FormDescription>
-            View and change your profile information here
-          </FormDescription>
+          <FormDescription>{t("profile.description")}</FormDescription>
         </div>
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{t("profile.email")}</FormLabel>
               <FormControl>
-                <Input {...field} disabled className="bg-white dark:bg-gray-700 dark:border-gray-700" />
+                <Input
+                  {...field}
+                  disabled
+                  className="bg-white dark:bg-gray-700 dark:border-gray-700"
+                />
               </FormControl>
             </FormItem>
           )}
@@ -80,9 +85,12 @@ const UserProfileForm = ({
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>{t("profile.name")}</FormLabel>
               <FormControl>
-                <Input {...field} className="bg-white dark:bg-gray-900 dark:border-gray-700" />
+                <Input
+                  {...field}
+                  className="bg-white dark:bg-gray-900 dark:border-gray-700"
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -95,9 +103,12 @@ const UserProfileForm = ({
             name="addressLine1"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Address Line 1</FormLabel>
+                <FormLabel>{t("profile.address")}</FormLabel>
                 <FormControl>
-                  <Input {...field} className="bg-white dark:bg-gray-900 dark:border-gray-700" />
+                  <Input
+                    {...field}
+                    className="bg-white dark:bg-gray-900 dark:border-gray-700"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -108,9 +119,12 @@ const UserProfileForm = ({
             name="city"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>City</FormLabel>
+                <FormLabel>{t("profile.city")}</FormLabel>
                 <FormControl>
-                  <Input {...field} className="bg-white dark:bg-gray-900 dark:border-gray-700" />
+                  <Input
+                    {...field}
+                    className="bg-white dark:bg-gray-900 dark:border-gray-700"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -121,9 +135,12 @@ const UserProfileForm = ({
             name="country"
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Country</FormLabel>
+                <FormLabel>{t("profile.country")}</FormLabel>
                 <FormControl>
-                  <Input {...field} className="bg-white dark:bg-gray-900 dark:border-gray-700" />
+                  <Input
+                    {...field}
+                    className="bg-white dark:bg-gray-900 dark:border-gray-700"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>

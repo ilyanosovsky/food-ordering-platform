@@ -59,6 +59,47 @@
       "userProfile": "פרופיל משתמש",
       "logOut": "התנתק",
       "manageRestaurant": "ניהול מסעדה"
+    },
+    "details": {
+      "sectionTitle": "פרטים",
+      "sectionDescription": "הזן את פרטי המסעדה שלך",
+      "restaurantName": "שם",
+      "city": "עיר",
+      "country": "מדינה",
+      "deliveryPrice": "מחיר משלוח ($)",
+      "estimatedDeliveryTime": "זמן משלוח משוער (בדקות)"
+    },
+    "cuisines": {
+      "cuisines": "מטבחים",
+      "select": "בחר את סוגי המטבחים שהמסעדה שלך מגישה"
+    },
+    "menu": {
+      "menu": "תפריט",
+      "create": "צור את התפריט שלך ותן לכל פריט שם ומחיר",
+      "addItem": "הוסף פריט תפריט",
+      "name": "שם",
+      "price": "מחיר",
+      "remove": "הסר",
+      "submit": "שלח"
+    },
+    "image": {
+      "image": "תמונה",
+      "imageDescr": "הוסף תמונה שתוצג ברשימת המסעדות שלך בתוצאות החיפוש. הוספת תמונה חדשה תחליף את הקיימת."
+    },
+    "profile": {
+      "title": "פרופיל משתמש",
+      "buttonText": "שלח",
+      "description": "צפה ושנה את פרטי הפרופיל שלך כאן",
+      "email": "אימייל",
+      "name": "שם",
+      "address": "כתובת שורה 1",
+      "city": "עיר",
+      "country": "מדינה"
+    },
+    "tabs": {
+      "orders": "הזמנות",
+      "restaurant": "ניהול מסעדה",
+      "active": "הזמנות פעילות"
     }
   }
   

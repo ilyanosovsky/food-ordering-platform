@@ -59,6 +59,47 @@
       "userProfile": "User Profile",
       "logOut": "Log Out",
       "manageRestaurant": "Manage Restaurant"
+    },
+    "details": {
+        "sectionTitle": "Details",
+        "sectionDescription": "Enter the details about your restaurant",
+        "restaurantName": "Name",
+        "city": "City",
+        "country": "Country",
+        "deliveryPrice": "Delivery price ($)",
+        "estimatedDeliveryTime": "Estimated Delivery Time (minutes)"
+      },
+    "cuisines": {
+        "cuisines": "Cuisines",
+        "select": "Select the cuisines that your restaurant serves"
+    },
+    "menu": {
+        "menu": "Menu",
+        "create": "Create your menu and give each item a name and a price",
+        "addItem": "Add Menu Item",
+        "name": "Name",
+        "price": "Price",
+        "remove": "Remove",
+        "submit": "Submit"
+    },
+    "image": {
+        "image": "Image",
+        "imageDescr": "Add an image that will be displayed on your restaurant listing in the search results. Adding a new image will overwrite the existing one."
+    },
+    "profile": {
+        "title": "User Profile",
+        "buttonText": "Submit",
+        "description": "View and change your profile information here",
+        "email": "Email",
+        "name": "Name",
+        "address": "Address Line 1",
+        "city": "City",
+        "country": "Country"
+    },
+    "tabs": {
+        "orders": "Orders",
+        "restaurant": "Manage Restaurant",
+        "active": "active orders"
     }
   }
   

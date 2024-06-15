@@ -11,6 +11,7 @@ import LoadingButton from "@/components/Loading/LoadingButton";
 import { Button } from "@/components/ui/button";
 import { Restaurant } from "@/types";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const formSchema = z
   .object({
@@ -57,6 +58,7 @@ type Props = {
 };
 
 const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
+  const { t } = useTranslation();
   const form = useForm<RestaurantFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -134,7 +136,7 @@ const ManageRestaurantForm = ({ onSave, isLoading, restaurant }: Props) => {
         <MenuSection />
         <Separator className="dark:bg-white" />
         <ImageSection />
-        {isLoading ? <LoadingButton /> : <Button type="submit">Submit</Button>}
+        {isLoading ? <LoadingButton /> : <Button type="submit">{t("menu.submit")}</Button>}
       </form>
     </Form>
   );
