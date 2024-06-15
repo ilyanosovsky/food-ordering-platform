@@ -50,6 +50,15 @@
       "inProgress": "В процессе",
       "outForDelivery": "В доставке",
       "delivered": "Доставлен"
+    },
+    "nav": {
+      "orderStatus": "Статус заказа",
+      "logIn": "Войти",
+      "welcome": "Добро пожаловать в OrderEats!",
+      "myRestaurant": "Мой ресторан",
+      "userProfile": "Профиль пользователя",
+      "logOut": "Выйти",
+      "manageRestaurant": "Управление рестораном"
     }
   }
   

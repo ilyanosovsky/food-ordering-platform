@@ -13,8 +13,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 import MobileNavLinks from "./MobileNavLinks";
 import { ModeToggle } from "../Theme/mode-toggle";
 import LanguageSelector from "../LangSelector/LanguageSelector";
+import { useTranslation } from "react-i18next";
 
 const MobileNav = () => {
+  const { t } = useTranslation();
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
 
   const getInitials = (name: string) => {
@@ -50,9 +52,7 @@ const MobileNav = () => {
             </span>
           ) : (
             <span className="flex justify-around items-center gap-4">
-              <span className="hover:text-orange-500">
-                Welcome to OrderEats!
-              </span>
+              <span className="hover:text-orange-500">{t("nav.welcome")}</span>
               <span className="flex">
                 <LanguageSelector />
                 <ModeToggle />
@@ -69,7 +69,7 @@ const MobileNav = () => {
               onClick={() => loginWithRedirect()}
               className="flex-1 font-bold bg-orange-500"
             >
-              Log In
+              {t("nav.logIn")}
             </Button>
           )}
         </SheetDescription>

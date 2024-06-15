@@ -50,6 +50,15 @@
       "inProgress": "בתהליך",
       "outForDelivery": "במשלוח",
       "delivered": "נמסר"
+    },
+    "nav": {
+      "orderStatus": "מצב הזמנה",
+      "logIn": "התחבר",
+      "welcome": "ברוכים הבאים ל-OrderEats!",
+      "myRestaurant": "המסעדה שלי",
+      "userProfile": "פרופיל משתמש",
+      "logOut": "התנתק",
+      "manageRestaurant": "ניהול מסעדה"
     }
   }
   

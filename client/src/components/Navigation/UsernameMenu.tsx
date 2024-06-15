@@ -1,4 +1,3 @@
-// import { CircleUserRound } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -10,11 +9,12 @@ import { Link } from "react-router-dom";
 import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { useTranslation } from "react-i18next";
 
 const UsernameMenu = () => {
+  const { t } = useTranslation();
   const { user, logout } = useAuth0();
 
-  // Function to extract initials from the user's name or email
   const getInitials = (name: string) => {
     const nameParts = name.split(" ");
     if (nameParts.length > 1) {
@@ -32,8 +32,6 @@ const UsernameMenu = () => {
             {user ? getInitials(user.name || user.email || "") : "?"}
           </AvatarFallback>
         </Avatar>
-        {/* <CircleUserRound className="text-orange-500" /> */}
-        {/* {user?.email} */}
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
@@ -41,12 +39,12 @@ const UsernameMenu = () => {
             to="/manage-restaurant"
             className="font-bold hover:text-orange-500"
           >
-            Manage Restaurant
+            {t("nav.manageRestaurant")}
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
           <Link to="/user-profile" className="font-bold hover:text-orange-500">
-            User Profile
+            {t("nav.userProfile")}
           </Link>
         </DropdownMenuItem>
         <Separator />
@@ -55,7 +53,7 @@ const UsernameMenu = () => {
             onClick={() => logout()}
             className="flex flex-1 font-bold bg-orange-500"
           >
-            Log Out
+            {t("nav.logOut")}
           </Button>
         </DropdownMenuItem>
       </DropdownMenuContent>

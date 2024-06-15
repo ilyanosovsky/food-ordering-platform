@@ -50,6 +50,15 @@
       "inProgress": "In Progress",
       "outForDelivery": "Out for Delivery",
       "delivered": "Delivered"
+    },
+    "nav": {
+      "orderStatus": "Order Status",
+      "logIn": "Log In",
+      "welcome": "Welcome to OrderEats!",
+      "myRestaurant": "My Restaurant",
+      "userProfile": "User Profile",
+      "logOut": "Log Out",
+      "manageRestaurant": "Manage Restaurant"
     }
   }
   
