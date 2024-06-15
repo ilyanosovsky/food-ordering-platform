@@ -6,6 +6,7 @@ import { Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const formSchema = z.object({
   searchQuery: z.string({
@@ -29,6 +30,7 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
       searchQuery,
     },
   });
+  const { t } = useTranslation();
 
   useEffect(() => {
     form.reset({ searchQuery });
@@ -79,10 +81,10 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
           variant="outline"
           className="rounded-full"
         >
-          Reset
+          {t("search.reset")}
         </Button>
         <Button type="submit" className="rounded-full bg-orange-500">
-          Search
+          {t("search.search")}
         </Button>
       </form>
     </Form>

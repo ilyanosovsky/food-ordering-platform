@@ -5,6 +5,29 @@
       "orderFaster": "הזמינו אוכל במהירות!",
       "downloadApp": "הורידו את אפליקציית OrderEats להזמנות מהירות והמלצות מותאמות אישית",
       "searchPlaceholder": "חיפוש לפי עיר או עיירה"
+    },
+    "footer": {
+      "privacy": "מדיניות פרטיות",
+      "terms": "תנאי שירות"
+    },
+    "search": {
+      "reset": "איפוס",
+      "search": "חיפוש",
+      "found": "מסעדות נמצאו ב",
+      "change": "שנה מיקום",
+      "mins": "דקות",
+      "delivery": "משלוח מ",
+      "filter": "סנן לפי סוג מטבח",
+      "resetFilters": "אפס סינונים",
+      "less": "הצג פחות",
+      "more": "הצג עוד",
+      "placeholder": "חפש לפי סוג מטבח או שם מסעדה"
+    },
+    "sort": {
+      "sortBy": "מיין לפי",
+      "bestMatch": "הכי מתאים",
+      "deliveryPrice": "מחיר משלוח",
+      "estimatedDeliveryTime": "זמן משלוח משוער"
     }
   }
   

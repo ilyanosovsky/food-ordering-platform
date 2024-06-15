@@ -7,6 +7,7 @@ import SearchResultInfo from "@/components/Search/SearchResultInfo";
 import SortOptionDropdown from "@/components/Search/SortOptionDropdown";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export type SearchState = {
   searchQuery: string;
@@ -25,7 +26,7 @@ const SearchPage = () => {
   });
 
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
-
+  const { t } = useTranslation();
   const { results, isLoading } = useSearchRestaurants(searchState, city);
 
   const setSortOption = (sortOption: string) => {
@@ -91,7 +92,7 @@ const SearchPage = () => {
         <SearchBar
           searchQuery={searchState.searchQuery}
           onSubmit={setSearchQuery}
-          placeHolder="Search by Cuisine or Restaurant Name"
+          placeHolder={t("search.placeholder")}
           onReset={resetSearch}
         />
         <div className="flex justify-between flex-col gap-3 lg:flex-row">

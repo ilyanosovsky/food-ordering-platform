@@ -5,6 +5,29 @@
       "orderFaster": "Order takeaway even faster!",
       "downloadApp": "Download the OrderEats App for faster ordering and personalised recommendations",
       "searchPlaceholder": "Search by City or Town"
+    },
+    "footer": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "search": {
+      "reset": "Reset",
+      "search": "Search",
+      "found": "Restaurants found in",
+      "change": "Change Location",
+      "mins": "mins",
+      "delivery": "Delivery from",
+      "filter": "Filter By Cuisine",
+      "resetFilters": "Reset Filters",
+      "less": "View Less",
+      "more": "View More",
+      "placeholder": "Search by Cuisine or Restaurant Name"
+    },
+    "sort": {
+      "sortBy": "Sort by",
+      "bestMatch": "Best match",
+      "deliveryPrice": "Delivery price",
+      "estimatedDeliveryTime": "Estimated delivery time"
     }
   }
   
