@@ -49,21 +49,21 @@ We leverage **Cloudinary** for efficient image storage and management, ensuring 
 
 ### Landing Page
 
-![Landing Page Light Mode](path/to/light-mode-screenshot.png) ![Landing Page Dark Mode](path/to/dark-mode-screenshot.png)
+![Landing Page Light Mode](assets/fullLight.png) ![Landing Page Dark Mode](assets/fullDark.png)
 
 ### Features
 
-![User Authentication](path/to/authentication-screenshot.png)
-*User Authentication/Registration/Profiles*
-
-![Restaurant Management](path/to/restaurant-management-screenshot.png)
+![Restaurant Management](assets/search.png)
 *Restaurant Management & Image Upload*
 
-![Cart Management](path/to/cart-management-screenshot.png)
+![Cart Management](assets/cart.png)
 *Cart Management & Stripe Checkout*
 
-![Live Order Status](path/to/live-order-status-screenshot.png)
+![Live Order Status](assets/status.png)
 *Live Order Status*
+
+![Navigation Light Mode](assets/navLight.png) ![Navigation Dark Mode](assets/navDark.png)
+*Dark / Light Mode / Localization*
 
 ---
 
