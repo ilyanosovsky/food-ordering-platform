@@ -7,6 +7,7 @@ import UserProfileForm, {
   UserFormData,
 } from "@/forms/user-profile-form/UserProfileForm";
 import { useGetMyUser } from "@/api/MyUserApi";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   onCheckout: (userFormData: UserFormData) => void;
@@ -22,7 +23,7 @@ const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
   } = useAuth0();
 
   const { pathname } = useLocation();
-
+  const { t } = useTranslation();
   const { currentUser, isLoading: isGetUserLoading } = useGetMyUser();
 
   const onLogin = async () => {
@@ -36,7 +37,7 @@ const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
   if (!isAuthenticated) {
     return (
       <Button onClick={onLogin} className="bg-orange-500 flex-1">
-        Log in to check out
+        {t("order.logInTo")}
       </Button>
     );
   }
@@ -49,7 +50,7 @@ const CheckoutButton = ({ onCheckout, disabled, isLoading }: Props) => {
     <Dialog>
       <DialogTrigger asChild>
         <Button disabled={disabled} className="bg-orange-500 flex-1">
-          Go to checkout
+          {t("order.goToCheckout")}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-[425px] md:min-w-[700px] bg-gray-50">

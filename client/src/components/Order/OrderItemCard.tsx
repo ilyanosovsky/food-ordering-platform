@@ -13,6 +13,7 @@ import {
 import { ORDER_STATUS } from "@/config/order-status-config";
 import { useUpdateMyRestaurantOrder } from "@/api/MyRestaurantApi";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   order: Order;
@@ -21,6 +22,7 @@ type Props = {
 const OrderItemCard = ({ order }: Props) => {
   const { updateRestaurantStatus, isLoading } = useUpdateMyRestaurantOrder();
   const [status, setStatus] = useState<OrderStatus>(order.status);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setStatus(order.status);
@@ -50,23 +52,23 @@ const OrderItemCard = ({ order }: Props) => {
       <CardHeader>
         <CardTitle className="grid md:grid-cols-4 gap-4 justify-between mb-3">
           <div>
-            Customer Name:
+            {t("order.customerName")}:
             <span className="ml-2 font-normal">
               {order.deliveryDetails.name}
             </span>
           </div>
           <div>
-            Delivery address:
+            {t("order.deliveryAddress")}:
             <span className="ml-2 font-normal">
               {order.deliveryDetails.addressLine1}, {order.deliveryDetails.city}
             </span>
           </div>
           <div>
-            Time:
+            {t("order.time")}:
             <span className="ml-2 font-normal">{getTime()}</span>
           </div>
           <div>
-            Total Cost:
+            {t("order.totalCost")}:
             <span className="ml-2 font-normal">
               ${(order.totalAmount / 100).toFixed(2)}
             </span>
@@ -86,7 +88,7 @@ const OrderItemCard = ({ order }: Props) => {
           ))}
         </div>
         <div className="flex flex-col space-y-1.5">
-          <Label htmlFor="status">What is the status of this order?</Label>
+          <Label htmlFor="status">{t("order.whatStatus")}</Label>
           <Select
             value={status}
             disabled={isLoading}

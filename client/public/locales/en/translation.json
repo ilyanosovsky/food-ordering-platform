@@ -28,6 +28,29 @@
       "bestMatch": "Best match",
       "deliveryPrice": "Delivery price",
       "estimatedDeliveryTime": "Estimated delivery time"
+    },
+    "order": {
+      "yourOrder": "Your Order",
+      "delivery": "Delivery",
+      "status": "Order Status",
+      "expectedBy": "Expected by",
+      "deliveringTo": "Delivering to",
+      "total": "Total",
+      "totalCost": "Total Cost",
+      "time": "Time",
+      "deliveryAddress": "Delivery address",
+      "customerName": "Customer Name",
+      "whatStatus": "What is the status of this order?",
+      "logInTo": "Log in to check out",
+      "goToCheckout": "Go to checkout"
+    },
+    "orderStatus": {
+      "placed": "Placed",
+      "paid": "Awaiting Restaurant Confirmation",
+      "inProgress": "In Progress",
+      "outForDelivery": "Out for Delivery",
+      "delivered": "Delivered"
     }
   }
+  
   

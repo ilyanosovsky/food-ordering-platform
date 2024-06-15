@@ -28,6 +28,28 @@
       "bestMatch": "Лучшее совпадение",
       "deliveryPrice": "Цена доставки",
       "estimatedDeliveryTime": "Расчетное время доставки"
+    },
+    "order": {
+      "yourOrder": "Ваш заказ",
+      "delivery": "Доставка",
+      "status": "Статус заказа",
+      "expectedBy": "Ожидается к",
+      "deliveringTo": "Доставка в",
+      "total": "Итого",
+      "totalCost": "Общая стоимость",
+      "time": "Время",
+      "deliveryAddress": "Адрес доставки",
+      "customerName": "Имя клиента",
+      "whatStatus": "Какой статус этого заказа?",
+      "logInTo": "Войдите, чтобы оформить заказ",
+      "goToCheckout": "Перейти к оформлению"
+    },
+    "orderStatus": {
+      "placed": "Размещен",
+      "paid": "Ожидание подтверждения ресторана",
+      "inProgress": "В процессе",
+      "outForDelivery": "В доставке",
+      "delivered": "Доставлен"
     }
   }
   

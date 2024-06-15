@@ -4,6 +4,7 @@ import { CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { Separator } from "../ui/separator";
 import { Trash } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type Props = {
   restaurant: Restaurant;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
+  const { t } = useTranslation();
   const getTotalCost = () => {
     const totalInPence = cartItems.reduce(
       (total, cartItem) => total + cartItem.price * cartItem.quantity,
@@ -27,7 +29,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
     <>
       <CardHeader>
         <CardTitle className="text-2xl font-bold tracking-tight flex justify-between">
-          <span>Your Order</span>
+          <span>{t("order.yourOrder")}</span>
           <span>${getTotalCost()}</span>
         </CardTitle>
       </CardHeader>
@@ -53,7 +55,7 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
         ))}
         <Separator />
         <div className="flex justify-between">
-          <span>Delivery</span>
+          <span>{t("order.delivery")}</span>
           <span>${(restaurant.deliveryPrice / 100).toFixed(2)}</span>
         </div>
         <Separator />

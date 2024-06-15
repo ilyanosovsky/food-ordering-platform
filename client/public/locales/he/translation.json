@@ -28,6 +28,28 @@
       "bestMatch": "הכי מתאים",
       "deliveryPrice": "מחיר משלוח",
       "estimatedDeliveryTime": "זמן משלוח משוער"
+    },
+    "order": {
+      "yourOrder": "ההזמנה שלך",
+      "delivery": "משלוח",
+      "status": "מצב ההזמנה",
+      "expectedBy": "צפוי על ידי",
+      "deliveringTo": "משלוח אל",
+      "total": "סך הכל",
+      "totalCost": "עלות כוללת",
+      "time": "זמן",
+      "deliveryAddress": "כתובת למשלוח",
+      "customerName": "שם הלקוח",
+      "whatStatus": "מהו מצב ההזמנה הזו?",
+      "logInTo": "התחבר כדי לבצע צ'ק-אאוט",
+      "goToCheckout": "לך לצ'ק-אאוט"
+    },
+    "orderStatus": {
+      "placed": "הוזמן",
+      "paid": "ממתין לאישור המסעדה",
+      "inProgress": "בתהליך",
+      "outForDelivery": "במשלוח",
+      "delivered": "נמסר"
     }
   }
   
