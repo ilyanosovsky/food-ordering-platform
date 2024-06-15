@@ -49,8 +49,16 @@ We leverage **Cloudinary** for efficient image storage and management, ensuring 
 
 ### Landing Page
 
-![Landing Page Light Mode](assets/fullLight.png) 
-
+<table>
+  <tr>
+    <td align="center"><img src="assets/fullLight.png" alt="LightMode" /></td>
+    <td align="center"><img src="assets/fullDark.png" alt="DarkMode" /></td>
+  </tr>
+  <tr>
+    <td align="center">Light Mode</td>
+    <td align="center">Dark Mode</td>
+  </tr>
+</table>
 
 
 ### Features
