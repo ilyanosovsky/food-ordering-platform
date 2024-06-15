@@ -1,10 +1,13 @@
 import landingImage from "../assets/landing.png";
-import appDownloadImage from "../assets/appDownload.png";
+import appDownloadDark from "../assets/appDownloadDark.png";
+import appDownloadLight from "../assets/appDownloadLight.png";
 import SearchBar, { SearchForm } from "@/components/Search/SearchBar";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "@/config/theme-provider";
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const { theme } = useTheme();
 
   const handleSearchSubmit = (searchFormValues: SearchForm) => {
     navigate({
@@ -31,10 +34,13 @@ const HomePage = () => {
             Order takeaway even faster!
           </span>
           <span>
-            Download the MernEats App for faster ordering and personalised
+            Download the OrderEats App for faster ordering and personalised
             recommendations
           </span>
-          <img src={appDownloadImage} />
+          <img
+            src={theme === "dark" ? appDownloadDark : appDownloadLight}
+            alt="App Download"
+          />
         </div>
       </div>
     </div>

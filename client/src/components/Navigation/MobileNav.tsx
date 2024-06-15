@@ -47,7 +47,10 @@ const MobileNav = () => {
               <ModeToggle/>
             </span>
           ) : (
-            <span> Welcome to OrderEats.com!</span>
+            <span className="flex justify-around items-center"> 
+            <span className="hover:text-orange-500">Welcome to OrderEats.com!</span> 
+            <ModeToggle/>
+            </span>
           )}
         </SheetTitle>
         <Separator />
