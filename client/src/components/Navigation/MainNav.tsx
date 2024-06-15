@@ -2,7 +2,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { Button } from "../ui/button";
 import UsernameMenu from "./UsernameMenu";
 import { Link } from "react-router-dom";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "../Theme/mode-toggle";
+import LanguageSelector from "../LangSelector/LanguageSelector";
 
 const MainNav = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
@@ -25,6 +26,7 @@ const MainNav = () => {
           Log In
         </Button>
       )}
+      <LanguageSelector/>
       <ModeToggle />
     </span>
   );

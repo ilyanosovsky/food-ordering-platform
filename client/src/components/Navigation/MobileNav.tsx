@@ -11,7 +11,8 @@ import { Separator } from "../ui/separator";
 import { Button } from "../ui/button";
 import { useAuth0 } from "@auth0/auth0-react";
 import MobileNavLinks from "./MobileNavLinks";
-import { ModeToggle } from "./mode-toggle";
+import { ModeToggle } from "../Theme/mode-toggle";
+import LanguageSelector from "../LangSelector/LanguageSelector";
 
 const MobileNav = () => {
   const { isAuthenticated, loginWithRedirect, user } = useAuth0();
@@ -33,8 +34,6 @@ const MobileNav = () => {
         <SheetTitle>
           {isAuthenticated ? (
             <span className="flex justify-around items-center font-bold gap-2">
-              {/* <CircleUserRound className="text-orange-500" />
-              {user?.email} */}
               <Avatar>
                 <AvatarImage
                   src={user?.picture || ""}
@@ -44,12 +43,20 @@ const MobileNav = () => {
                   {user ? getInitials(user.name || user.email || "") : "?"}
                 </AvatarFallback>
               </Avatar>
-              <ModeToggle/>
+              <span className="flex gap-5">
+                <LanguageSelector />
+                <ModeToggle />
+              </span>
             </span>
           ) : (
-            <span className="flex justify-around items-center"> 
-            <span className="hover:text-orange-500">Welcome to OrderEats.com!</span> 
-            <ModeToggle/>
+            <span className="flex justify-around items-center gap-4">
+              <span className="hover:text-orange-500">
+                Welcome to OrderEats!
+              </span>
+              <span className="flex">
+                <LanguageSelector />
+                <ModeToggle />
+              </span>
             </span>
           )}
         </SheetTitle>
