@@ -5,13 +5,12 @@ import { Form, FormControl, FormField, FormItem } from "../ui/form";
 import { Search } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import useDebounce from "@/hooks/useDebounce";
 
 const formSchema = z.object({
-  searchQuery: z.string({
-    required_error: "Restaurant name is required",
-  }),
+  searchQuery: z.string().min(1, "Restaurant name is required"),
 });
 
 export type SearchForm = z.infer<typeof formSchema>;
@@ -23,18 +22,20 @@ type Props = {
   searchQuery?: string;
 };
 
-const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
+const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery = "" }: Props) => {
   const form = useForm<SearchForm>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      searchQuery,
+      searchQuery: searchQuery || "",
     },
   });
   const { t } = useTranslation();
+  const [query, setQuery] = useState(searchQuery);
+  const debouncedQuery = useDebounce(query, 500);
 
   useEffect(() => {
-    form.reset({ searchQuery });
-  }, [form, searchQuery]);
+    form.reset({ searchQuery: debouncedQuery });
+  }, [debouncedQuery, form]);
 
   const handleReset = () => {
     form.reset({
@@ -51,7 +52,7 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className={`flex items-center gap-3 justify-between flex-row border-2 rounded-full p-3  ${
-          form.formState.errors.searchQuery && "border-red-500"
+          form.formState.errors.searchQuery ? "border-red-500" : ""
         }`}
       >
         <Search
@@ -69,6 +70,8 @@ const SearchBar = ({ onSubmit, onReset, placeHolder, searchQuery }: Props) => {
                   {...field}
                   className="border-none shadow-none text-xl focus-visible:ring-0"
                   placeholder={placeHolder}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
                 />
               </FormControl>
             </FormItem>
