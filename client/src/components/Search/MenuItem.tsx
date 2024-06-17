@@ -9,19 +9,19 @@ type Props = {
 
 const MenuItem = ({ menuItem, addToCart }: Props) => {
   return (
-    <Card className="flex  cursor-pointer" onClick={addToCart}>
-      <AspectRatio ratio={16 / 3} className="flex ">
+    <Card className="flex cursor-pointer" onClick={addToCart}>
+      <AspectRatio ratio={16 / 3} className="flex-none w-1/3">
         <img
           src={
             menuItem.imageUrl ||
             "https://res.cloudinary.com/dueuo2k5y/image/upload/v1718559813/yeqo42dez4bzkejpitfi.png"
           } 
           alt={menuItem.name}
-          className="rounded-md object-cover"
+          className="rounded-md object-cover w-full h-full"
         />
       </AspectRatio>
-      <div className="flex flex-col justify-center  md:mr-10">
-        <CardHeader>
+      <div className="flex flex-col justify-center w-[200px]  md:mr-10">
+        <CardHeader >
           <CardTitle>{menuItem.name}</CardTitle>
         </CardHeader>
         <CardContent className="font-bold">
