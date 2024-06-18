@@ -10,7 +10,7 @@ type Props = {
 const MenuItem = ({ menuItem, addToCart }: Props) => {
   return (
     <Card className="flex cursor-pointer" onClick={addToCart}>
-      <AspectRatio ratio={16 / 3} className="flex-none w-1/3">
+      <AspectRatio ratio={16 / 3} className="flex-none w-1/3 min-w-[120px]">
         <img
           src={
             menuItem.imageUrl ||
