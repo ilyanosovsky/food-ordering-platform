@@ -31,7 +31,7 @@ const ManageRestaurantPage = () => {
         className="space-y-5 bg-gray-50 dark:bg-gray-900 p-10 rounded-lg"
       >
         <h2 className="text-2xl font-bold">{orders?.length} {t("tabs.active")}</h2>
-        {orders?.map((order) => (
+        {orders?.slice().reverse().map((order) => (
           <OrderItemCard key={order._id} order={order} />
         ))}
       </TabsContent>
