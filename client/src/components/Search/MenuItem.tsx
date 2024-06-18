@@ -14,7 +14,7 @@ const MenuItem = ({ menuItem, addToCart }: Props) => {
         <img
           src={
             menuItem.imageUrl ||
-            "https://res.cloudinary.com/dueuo2k5y/image/upload/v1718559813/yeqo42dez4bzkejpitfi.png"
+            "https://res.cloudinary.com/dueuo2k5y/image/upload/v1718688597/food/uwwbqhkqpgz1wqg9mdmz.png"
           } 
           alt={menuItem.name}
           className="rounded-md object-cover w-full h-full"
