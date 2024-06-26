@@ -5,7 +5,9 @@ jest.mock('mongoose', () => {
   const mockModel = {
     countDocuments: jest.fn(),
     find: jest.fn(),
+    findOne: jest.fn(),
     findById: jest.fn(),
+    save: jest.fn(),
   };
   return {
     ...actualMongoose,

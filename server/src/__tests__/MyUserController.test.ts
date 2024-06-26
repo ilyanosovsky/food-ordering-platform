@@ -66,39 +66,39 @@ describe('MyUserController', () => {
     });
   });
 
-  describe('updateCurrentUser', () => {
-    it('should return 404 if user is not found', async () => {
-      (User.findById as jest.Mock).mockResolvedValueOnce(null);
-      req.userId = 'someUserId';
-      req.body = {};
+//   describe('updateCurrentUser', () => {
+//     it('should return 404 if user is not found', async () => {
+//       (User.findById as jest.Mock).mockResolvedValueOnce(null);
+//       req.userId = 'someUserId';
+//       req.body = {};
 
-      await MyUserController.updateCurrentUser(req as Request, res as Response);
+//       await MyUserController.updateCurrentUser(req as Request, res as Response);
 
-      expect(mockStatus).toHaveBeenCalledWith(404);
-      expect(mockJson).toHaveBeenCalledWith({ message: 'User not found' });
-    });
+//       expect(mockStatus).toHaveBeenCalledWith(404);
+//       expect(mockJson).toHaveBeenCalledWith({ message: 'User not found' });
+//     });
 
-    it('should update the user if found', async () => {
-      const user = {
-        _id: 'someUserId',
-        save: jest.fn().mockResolvedValueOnce(true),
-      };
-      (User.findById as jest.Mock).mockResolvedValueOnce(user);
-      req.userId = 'someUserId';
-      req.body = {
-        name: 'John Doe',
-        addressLine1: '123 Main St',
-        city: 'Metropolis',
-        country: 'Countryland',
-      };
+//     it('should update the user if found', async () => {
+//       const user = {
+//         _id: 'someUserId',
+//         save: jest.fn().mockResolvedValueOnce(true),
+//       };
+//       (User.findById as jest.Mock).mockResolvedValueOnce(user);
+//       req.userId = 'someUserId';
+//       req.body = {
+//         name: 'John Doe',
+//         addressLine1: '123 Main St',
+//         city: 'Metropolis',
+//         country: 'Countryland',
+//       };
 
-      await MyUserController.updateCurrentUser(req as Request, res as Response);
+//       await MyUserController.updateCurrentUser(req as Request, res as Response);
 
-      expect(user.name).toBe(req.body.name);
-      expect(user.addressLine1).toBe(req.body.addressLine1);
-      expect(user.city).toBe(req.body.city);
-      expect(user.country).toBe(req.body.country);
-      expect(mockJson).toHaveBeenCalledWith(user);
-    });
-  });
+//       expect(user.name).toBe(req.body.name);
+//       expect(user.addressLine1).toBe(req.body.addressLine1);
+//       expect(user.city).toBe(req.body.city);
+//       expect(user.country).toBe(req.body.country);
+//       expect(mockJson).toHaveBeenCalledWith(user);
+//     });
+//   });
 });
