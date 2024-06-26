@@ -16,7 +16,7 @@ jest.mock('mongoose', () => {
       ...actualMongoose.connection,
       close: jest.fn(() => Promise.resolve()),
     },
-    model: jest.fn().mockReturnValue(mockModel),
+    model: jest.fn(() => mockModel),
     Schema: actualMongoose.Schema,
   };
 });
@@ -24,4 +24,3 @@ jest.mock('mongoose', () => {
 afterAll(async () => {
   await mongoose.connection.close();
 });
-
