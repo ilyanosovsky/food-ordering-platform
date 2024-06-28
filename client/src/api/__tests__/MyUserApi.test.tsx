@@ -1,63 +1,65 @@
-// import { renderHook, act } from '@testing-library/react';
-// import { useGetMyUser, useCreateMyUser, useUpdateMyUser } from "../MyUserApi";
-// import { useAuth0 } from "@auth0/auth0-react";
-// import { toast } from "sonner";
-// import { renderWithProviders } from "../../__tests__/test-utils";
+import { renderHook, waitFor } from "@testing-library/react"; // act,
+import { useGetMyUser } from "../MyUserApi"; //useUpdateMyUser , useCreateMyUser
+import { useAuth0 } from "@auth0/auth0-react";
+import { toast } from "sonner";
+import { renderWithProviders } from "../../__tests__/test-utils";
 
-// // Mocking useAuth0
-// jest.mock("@auth0/auth0-react", () => ({
-//   useAuth0: jest.fn(),
-// }));
+// Mocking useAuth0
+jest.mock("@auth0/auth0-react", () => ({
+  useAuth0: jest.fn(),
+}));
 
-// // Mocking toast notifications
-// jest.mock("sonner", () => ({
-//   toast: {
-//     success: jest.fn(),
-//     error: jest.fn(),
-//   },
-// }));
+// Mocking toast notifications
+jest.mock("sonner", () => ({
+  toast: {
+    success: jest.fn(),
+    error: jest.fn(),
+  },
+}));
 
-// describe("MyUserApi", () => {
-//   beforeEach(() => {
-//     fetchMock.resetMocks();
-//   });
+// // Mocking API_BASE_URL
+// const API_BASE_URL = "http://localhost:5001";
 
-//   describe("useGetMyUser", () => {
-//     it("fetches current user successfully", async () => {
-//       const mockUser = { auth0Id: "someAuth0Id", email: "test@example.com" };
-//       fetchMock.mockResponseOnce(JSON.stringify(mockUser));
+describe("MyUserApi", () => {
+  beforeEach(() => {
+    fetchMock.resetMocks();
+  });
 
-//       (useAuth0 as jest.Mock).mockReturnValue({
-//         getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
-//       });
+  describe("useGetMyUser", () => {
+    it("fetches current user successfully", async () => {
+      const mockUser = { auth0Id: "someAuth0Id", email: "test@example.com" };
+      fetchMock.mockResponseOnce(JSON.stringify(mockUser));
 
-//       const { result, waitFor } = renderHook(() => useGetMyUser(), {
-//         wrapper: ({ children }) => renderWithProviders(children),
-//       });
+      (useAuth0 as jest.Mock).mockReturnValue({
+        getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
+      });
 
-//       await waitFor(() => result.current.isLoading === false);
+      const { result } = renderHook(() => useGetMyUser(), {
+        wrapper: ({ children }) => renderWithProviders(children),
+      });
 
-//       expect(result.current.currentUser).toEqual(mockUser);
-//       expect(result.current.isLoading).toBe(false);
-//     });
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
 
-//     it("handles error during fetching current user", async () => {
-//       fetchMock.mockRejectOnce(new Error("Failed to fetch user"));
+      expect(result.current.currentUser).toEqual(mockUser);
+    });
 
-//       (useAuth0 as jest.Mock).mockReturnValue({
-//         getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
-//       });
+    it("handles error during fetching current user", async () => {
+      fetchMock.mockRejectOnce(new Error("Failed to fetch user"));
 
-//       const { result, waitFor } = renderHook(() => useGetMyUser(), {
-//         wrapper: ({ children }) => renderWithProviders(children),
-//       });
+      (useAuth0 as jest.Mock).mockReturnValue({
+        getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
+      });
 
-//       await waitFor(() => result.current.isLoading === false);
+      const { result } = renderHook(() => useGetMyUser(), {
+        wrapper: ({ children }) => renderWithProviders(children),
+      });
 
-//       expect(result.current.currentUser).toBeUndefined();
-//       expect(toast.error).toHaveBeenCalledWith("Error: Failed to fetch user");
-//     });
-//   });
+      await waitFor(() => expect(result.current.isLoading).toBe(false));
+
+      expect(result.current.currentUser).toBeUndefined();
+      expect(toast.error).toHaveBeenCalledWith("Error: Failed to fetch user");
+    });
+  });
 
 //   describe("useCreateMyUser", () => {
 //     it("creates user successfully", async () => {
@@ -168,4 +170,4 @@
 //       expect(result.current.isSuccess).toBe(false);
 //     });
 //   });
-// });
+});

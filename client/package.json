@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
@@ -43,6 +44,9 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.24.7",
+    "@babel/preset-react": "^7.24.7",
+    "@babel/preset-typescript": "^7.24.7",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
@@ -60,6 +64,7 @@
     "jest-fetch-mock": "^3.0.3",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
+    "ts-jest": "^29.1.5",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   }
