@@ -1,5 +1,5 @@
-import { renderHook, waitFor } from "@testing-library/react"; // act,
-import { useGetMyUser } from "../MyUserApi"; //useUpdateMyUser , useCreateMyUser
+import { renderHook, act, waitFor } from "@testing-library/react"; // act,
+import { useGetMyUser, useCreateMyUser } from "../MyUserApi"; //useUpdateMyUser , useCreateMyUser
 import { useAuth0 } from "@auth0/auth0-react";
 import { toast } from "sonner";
 import { renderWithProviders } from "../../__tests__/test-utils";
@@ -17,8 +17,8 @@ jest.mock("sonner", () => ({
   },
 }));
 
-// // Mocking API_BASE_URL
-// const API_BASE_URL = "http://localhost:5001";
+// Mocking API_BASE_URL
+const API_BASE_URL = "http://localhost:5001";
 
 describe("MyUserApi", () => {
   beforeEach(() => {
@@ -61,58 +61,58 @@ describe("MyUserApi", () => {
     });
   });
 
-//   describe("useCreateMyUser", () => {
-//     it("creates user successfully", async () => {
-//       fetchMock.mockResponseOnce(JSON.stringify({}));
+  describe("useCreateMyUser", () => {
+    it("creates user successfully", async () => {
+      fetchMock.mockResponseOnce(JSON.stringify({}));
 
-//       (useAuth0 as jest.Mock).mockReturnValue({
-//         getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
-//       });
+      (useAuth0 as jest.Mock).mockReturnValue({
+        getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
+      });
 
-//       const { result } = renderHook(() => useCreateMyUser(), {
-//         wrapper: ({ children }) => renderWithProviders(children),
-//       });
+      const { result } = renderHook(() => useCreateMyUser(), {
+        wrapper: ({ children }) => renderWithProviders(children),
+      });
 
-//       await act(async () => {
-//         await result.current.createUser({
-//           auth0Id: "someAuth0Id",
-//           email: "test@example.com",
-//         });
-//       });
+      await act(async () => {
+        await result.current.createUser({
+          auth0Id: "someAuth0Id",
+          email: "test@example.com",
+        });
+      });
 
-//       expect(fetchMock).toHaveBeenCalledWith(
-//         `${API_BASE_URL}/api/my/user`,
-//         expect.anything()
-//       );
-//       expect(result.current.isLoading).toBe(false);
-//       expect(result.current.isError).toBe(false);
-//       expect(result.current.isSuccess).toBe(true);
-//     });
+      expect(fetchMock).toHaveBeenCalledWith(
+        `${API_BASE_URL}/api/my/user`,
+        expect.anything()
+      );
+      expect(result.current.isLoading).toBe(false);
+      expect(result.current.isError).toBe(false);
+      expect(result.current.isSuccess).toBe(true);
+    });
 
-//     it("handles error during creating user", async () => {
-//       fetchMock.mockRejectOnce(new Error("Failed to create user"));
+    it("handles error during creating user", async () => {
+      fetchMock.mockRejectOnce(new Error("Failed to create user"));
 
-//       (useAuth0 as jest.Mock).mockReturnValue({
-//         getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
-//       });
+      (useAuth0 as jest.Mock).mockReturnValue({
+        getAccessTokenSilently: jest.fn().mockResolvedValue("fake-token"),
+      });
 
-//       const { result } = renderHook(() => useCreateMyUser(), {
-//         wrapper: ({ children }) => renderWithProviders(children),
-//       });
+      const { result } = renderHook(() => useCreateMyUser(), {
+        wrapper: ({ children }) => renderWithProviders(children),
+      });
 
-//       await act(async () => {
-//         await result.current.createUser({
-//           auth0Id: "someAuth0Id",
-//           email: "test@example.com",
-//         });
-//       });
+      await act(async () => {
+        await result.current.createUser({
+          auth0Id: "someAuth0Id",
+          email: "test@example.com",
+        });
+      });
 
-//       expect(toast.error).toHaveBeenCalledWith("Error: Failed to create user");
-//       expect(result.current.isLoading).toBe(false);
-//       expect(result.current.isError).toBe(true);
-//       expect(result.current.isSuccess).toBe(false);
-//     });
-//   });
+      expect(toast.error).toHaveBeenCalledWith("Error: Failed to create user");
+      expect(result.current.isLoading).toBe(false);
+      expect(result.current.isError).toBe(true);
+      expect(result.current.isSuccess).toBe(false);
+    });
+  });
 
 //   describe("useUpdateMyUser", () => {
 //     it("updates user successfully", async () => {
